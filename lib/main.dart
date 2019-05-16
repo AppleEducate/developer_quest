@@ -1,14 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
-import 'package:flutter/foundation.dart'
-    show debugDefaultTargetPlatformOverride;
+import 'package:flutter/foundation.dart';
 import 'package:dev_rpg/src/about_screen.dart';
 import 'package:dev_rpg/src/code_chomper/code_chomper.dart';
 import 'package:dev_rpg/src/game_screen.dart';
 import 'package:dev_rpg/src/shared_state/game/world.dart';
 import 'package:dev_rpg/src/shared_state/user.dart';
-import 'package:dev_rpg/src/style.dart';
 import 'package:dev_rpg/src/style_sphinx/axis_questions.dart';
 import 'package:dev_rpg/src/style_sphinx/flex_questions.dart';
 import 'package:dev_rpg/src/style_sphinx/kittens.dart';
@@ -60,6 +58,9 @@ class _MyAppState extends State<MyApp> {
           ChangeNotifierProvider.value(notifier: world.characterPool),
           ChangeNotifierProvider.value(notifier: world.taskPool),
           ChangeNotifierProvider.value(notifier: world.company),
+          ChangeNotifierProvider.value(notifier: world.company.users),
+          ChangeNotifierProvider.value(notifier: world.company.joy),
+          ChangeNotifierProvider.value(notifier: world.company.coin),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',
